@@ -1,10 +1,9 @@
-import mcpi.minecraft as minecraft
-mc = minecraft.Minecraft.create()
-import time
+﻿from mcpi import minecraft​
+​mc = minecraft.Minecraft.create()
+​import time
 import picamera
 
 ###Code to take a picture###
-###@TeCoEd###
 def take_the_pic():
     with picamera.PiCamera()as camera:
         #camera.resolution = (150, 100)
@@ -12,14 +11,16 @@ def take_the_pic():
         time.sleep(2)
         camera.capture('selfie.jpg')
 
+###Code to find the player's location###
 def where_am_I():
     while True:
         pos = mc.player.getPos()
         x = pos.x
         y = pos.y
         z = pos.z
-    #print x, y, z
+    
         time.sleep(3)
+        
         if x >= 10.5 and y == 9.0 and z == -44.3:
         #print "You are at the photobooth!"
         
