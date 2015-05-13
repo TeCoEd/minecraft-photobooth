@@ -12,7 +12,7 @@ This will import the PiCamera module to control the camera and the time module t
 
 1. Open the LX Terminal
 
-2. Type `sudo IDLE`
+2. Type `sudo IDLE`, this will load the Python IDLE code editor which you will use to write the Photo booth program
 
 3. Open a new window
 
@@ -26,8 +26,6 @@ import picamera
 ```
 
 ## Testing the PiCamera
-
-This will load the Python IDLE code editor which you will use to write the Photo booth program
 
 Next we need to create a function which will control the PiCamera.  A function is made up of a number of lines of code which control a task, in this example they control the PiCamera.
 However, it takes several lines of code to do this. By creating a function you can use a short word or phrase to call the lines of code.  
