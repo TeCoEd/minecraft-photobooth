@@ -2,11 +2,7 @@
 
 Create a Photo booth in Minecraft, which you the player enter the Photo booth it triggers the PiCamera and takes your picture, don't forget to smile.
 
-<<<<<<< HEAD
 Before starting ensure that your PiCamera is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera boot up the Raspberry Pi
-=======
-Before starting ensure that your PiCamera is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera boot up the Raspberry Pi.
->>>>>>> origin/master
 
 ## Importing the Minecraft API and PiCamera Module
 
