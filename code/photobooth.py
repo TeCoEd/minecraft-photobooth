@@ -1,6 +1,6 @@
-﻿from mcpi import minecraft​
-​mc = minecraft.Minecraft.create()
-​import time
+from mcpi import minecraft​
+mc = minecraft.Minecraft.create()
+import time
 import picamera
 
 ###Code to take a picture###
@@ -27,11 +27,8 @@ def where_am_I():
             take_the_pic()
             mc.postToChat("Check out your picture")
             time.sleep(5)
-        else:
-            pass
-
-def start():
-    mc.postToChat("Find the Photo-Booth")
-    where_am_I()
+        
+mc.postToChat("Find the Photo-Booth")
+where_am_I()
     
-start()
+
