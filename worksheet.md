@@ -26,9 +26,7 @@ import picamera
 
 ## Testing the PiCamera
 
-Next we need to create a function which will control the PiCamera.  A function is made up of a number of lines of code which control a task, in this example they control the PiCamera.
-However, it takes several lines of code to do this. By creating a function you can use a short word or phrase to call the lines of code.  
-In the code below it triggers the PiCamera every time the take_the_pic() function is called.   
+Next we need to create a function which will control the PiCamera.  A function is made up of a number of lines of code which control a task, in this example they control the PiCamera.  However, it takes several lines of code to do this. By creating a function you can use a short word or phrase to call the lines of code.  In the code below it triggers the PiCamera every time the take_the_pic() function is called.   
 
 1. Enter the code below
 
@@ -99,12 +97,11 @@ You will note that the `if` statement checks if `x` value is greater than or equ
 
 ## Putting it all together Part 1
 
-Now you have a working Photo booth we just need to add the PiCamera to take a picture.   We will replace the console message with a message in Minecraft 
-to tell you that you are in the Photo booth, a quick reminder to smile and then call the PiCamera function, take_the_pic() 
+Now you have a working Photo booth we need to add the PiCamera to take a picture.   We will replace the console message with a message in Minecraft to tell you that you are in the Photo booth, a quick reminder to smile and then call the PiCamera function, `take_the_pic()`.  Displaying a message is easly achived by using the code `mc.postToChat("You are in the Photo booth!")`    
  
 1. Comment out the print "You are at the Photo booth!"   
 
-2. Under and in line with the commented out `###You are at the Photo booth`, add the following code
+2. Under and in-line with the commented out `###You are at the Photo booth`, add the following code
 
 ```python
 mc.postToChat("You are in the Photo booth!")
@@ -115,13 +112,11 @@ take_the_pic()
 mc.postToChat("Check out your picture")
 time.sleep(5)
 ```
-
-3. Delete the where_am_I() line	
+3. Delete the `where_am_I()` line	
 
 ## Putting it all together Part 2
 
-Well done you are nearly there, the final part of the project is to create one more function to begin the program and run the other functions that check where you are.
-You will notice now that your original where_am_I() function includes all the code to check the players location and trigger the camera.  A new function will call
+Well done you are nearly there, the final part of the project is to create one more function to begin the program and run the other functions that check where you are.  You will notice now that your original `where_am_I()` function includes all the code to check the players location and trigger the camera.  A new function will call
 these parts of the program
 
 1. Add the code below to the bottom of your program
@@ -133,7 +128,6 @@ def start():
     
 start()
 ```
-
 2. Save the program
 
 3. Press F5 to run and test the Photo booth
