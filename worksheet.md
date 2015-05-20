@@ -4,7 +4,7 @@ Create a Photo booth in Minecraft, which you the player enter the Photo booth it
 
 Before starting ensure that your PiCamera is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera boot up the Raspberry Pi.
 
-## Importing the Minecraft API and PiCamera Modules
+## Importing the Minecraft API and PiCamera Module
 
 The first part of the program is to import the Minecraft API. (Application Programming Interface) This enables you to connect to Minecraft and use Python to code.
 This will import the PiCamera module to control the camera and the time module to add a small delay between taking the photo and then taking the next photo.
