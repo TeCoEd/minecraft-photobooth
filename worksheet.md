@@ -2,8 +2,7 @@
 
 Create a Photo booth in Minecraft, which you the player enter the Photo booth it triggers the PiCamera and takes your picture, don't forget to smile.
 
-Before starting ensure that your PiCamera is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  
-Once you have connected the camera boot up the Raspberry Pi
+Before starting ensure that your PiCamera is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera boot up the Raspberry Pi.
 
 ## Importing the Minecraft API and PiCamera Modules
 
@@ -61,9 +60,7 @@ Using any block type create a Photo booth, this can be any shape but should have
 ![](images/Photobooth.jpg)
 
 Once you have created your Photo booth move your player inside and onto the trigger block.  This is the block that the player stands on to run the function that 
-you wrote in step 1, it will trigger the PiCamera.  In the Minecraft environment your position is measured in the `x`, `y` and `z` axis, look at the 
-top right of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example `10.5`, `9.0`, `-44.3`.  These are also the `x`, `y`, `z` 
-co-ordinates of the 'trigger' block in your Photo booth.
+you wrote in step 1, it will trigger the PiCamera.  In the Minecraft environment your position is measured in the `x`, `y` and `z` axis, look at the top right of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example `10.5`, `9.0`, `-44.3`.  These are also the `x`, `y`, `z` co-ordinates of the 'trigger' block in your Photo booth.
  
 1. Walk into your Photo booth
 
@@ -71,11 +68,9 @@ co-ordinates of the 'trigger' block in your Photo booth.
 
 ## Finding where I am?
 
-When you are playing Minecraft your the program will need to check that you are inside the Photo booth, if you are then it will trigger the take_the_pic function and take a picture.
-To do this Minecraft needs to know where you are in the world, it needs to measure and record your position.   To find your position you use the code, `pos = mc.player.getPos()`.  This measures the `x`, `y`, `z` position of your player.  You can then use
-print pos.x to print the `x` value.  Now you now the position of the player you can test to see if they are in the Photo booth. 
+When you are playing Minecraft your the program will need to check that you are inside the Photo booth, if you are then it will trigger the `take_the_pic` function and take a picture.  To do this Minecraft needs to know where you are in the world, it needs to measure and record your position.   To find your position you use the code, `x, y, x = mc.player.getPos()`.  This measures the `x`, `y`, `z` position of your player.  You can then use `print pos.x` to print the `x` value.  Now you now the position of the player you can test to see if they are in the Photo booth. 
 
-1. Add the function to your PiCamera Program
+1. Add the function below to your PiCamera program
 
 ``` python
 def where_am_i():
@@ -85,9 +80,7 @@ def where_am_i():
 	
 ## Testing that you are in the Photo booth 
  
-At this point we have a Photo booth, the co-ordinates of the trigger block, and a function to control the PiCamera and take a picture.  The next step is to test the program 
-identifies when you are in the Photo booth.  To do this we must create a loop which checks if your player co-ordinates match the trigger block co-ordinates. If they
-do then you are standing in the Photo booth.  You can do this by using a simple if statement, we call these conditionals.  Add the code below to your Python program. 
+At this point we have a Photo booth, the co-ordinates of the trigger block, and a function to control the PiCamera and take a picture.  The next step is to test the program identifies when you are in the Photo booth.  To do this we must create a loop which checks if your player co-ordinates match the trigger block co-ordinates. If they do, then you are standing in the Photo booth.  To do this we use a simple `if` statement, we call these conditionals.  Add the code below to your program. 
 
 ```python
 while True:
@@ -102,8 +95,7 @@ where_am_I()
 
 2. Walk into your Photo booth
 
-You will note that the if statement checks if `x` value is greater than or equal to 10.5, this is ensure that it picks up the block as it could have a value of 10.6
-Remember to replace the `x`, `y` and `z` values with the values from your Photo booth.
+You will note that the `if` statement checks if `x` value is greater than or equal to 10.5, this is ensure that it picks up the block as it could have a value of 10.6.  Remember to replace the `x`, `y` and `z` values with the values from your Photo booth.
 
 ## Putting it all together Part 1
 
