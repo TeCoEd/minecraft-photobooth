@@ -60,9 +60,10 @@ Using any block type create a Photo booth, this should have at least one block w
 
 ![](images/Photobooth.jpg)
 
-Once you have created your Photo booth move your player inside and onto the trigger block.  This is the block that the player stands on to trigger the PiCamera.  In the top right of the window 
-you will see the `x`, `y`, `z` co-ordinates of your player, for example 10.5, 9.0, -44.3.  In the Minecraft environment your position is measured in the
-`x`, `y` and `z` axis. These are also the `x`, `y`, `z` co-ordinates of the 'trigger' block in your Photo booth.
+Once you have created your Photo booth move your player inside and onto the trigger block.  This is the block that the player stands on to run the function that 
+you wrote in step 1, it will trigger the PiCamera.  In the Minecraft environment your position is measured in the `x`, `y` and `z` axis, look at the 
+top right of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example 10.5, 9.0, -44.3.  These are also the `x`, `y`, `z` 
+co-ordinates of the 'trigger' block in your Photo booth.
  
 1. Walk into your Photo booth
 
@@ -71,16 +72,15 @@ you will see the `x`, `y`, `z` co-ordinates of your player, for example 10.5, 9.
 ## Finding where I am?
 
 When you are playing Minecraft your the program will need to check that you are inside the Photo booth, if you are then it will trigger the take_the_pic function and take a picture.
-To do this Minecraft needs to know where you are in the world, it needs to measure and record your position.   To find your position you use the code, pos = mc.player.getPos().  This measures the `x`, `y`, `z` position of your player.  You can then use
+To do this Minecraft needs to know where you are in the world, it needs to measure and record your position.   To find your position you use the code, `pos = mc.player.getPos()`.  This measures the `x`, `y`, `z` position of your player.  You can then use
 print pos.x to print the `x` value.  Now you now the position of the player you can test to see if they are in the Photo booth. 
+
+1. Add the function to your PiCamera Program
 
 ``` python
 def where_am_i():
 	while True:
-		pos = mc.player.getPos()
-		x = pos.x
-		y = pos.y
-		z = pos.z
+		x, y, z, = mc.player.getPos()
 ```
 	
 ## Testing that you are in the Photo booth 
@@ -94,24 +94,25 @@ while True:
 	where_am_I()
 	time.sleep(2)
 	if x >= 10.5 and y == 9.0 and z == -44.3:
-		print "You are at the Photo booth!"   
+		print ("You are at the Photo booth!")   
 where_am_I()		
 ```
 
 1. Save the program and press F5 to test it.
 
-2. Walk into the Photo booth
+2. Walk into your Photo booth
 
-You will note that the if statement checks if x is greater than or equal to 10.5, this is ensure that it picks up the block as it could have a value of 10.6.
+You will note that the if statement checks if `x` value is greater than or equal to 10.5, this is ensure that it picks up the block as it could have a value of 10.6
+Remember to replace the `x`, `y` and `z` values with the values from your Photo booth.
 
 ## Putting it all together Part 1
 
 Now you have a working Photo booth we just need to add the PiCamera to take a picture.   We will replace the console message with a message in Minecraft 
-to tell you that you are in the Photo booth, A quick reminder to smile and then call the PiCamera function, take_the_pic()  T
+to tell you that you are in the Photo booth, a quick reminder to smile and then call the PiCamera function, take_the_pic() 
  
 1. Comment out the print "You are at the Photo booth!"   
 
-2. Under and in line with the You are at the Photo booth, add the following code
+2. Under and in line with the commented out `###You are at the Photo booth`, add the following code
 
 ```python
 mc.postToChat("You are in the Photo booth!")
@@ -124,18 +125,6 @@ time.sleep(5)
 ```
 
 3. Delete the where_am_I() line	
-	
-## What if you are not in the Photo booth?
-
-What happens if you are not inside the Photo booth, this needs to be coded as well.  We will use an else statement, which will run of the if statement does not run.
-if you are in the Photo booth then take the picture else (if not) then do something else.  We want if to pass and then check again to see if you are in the Booth yet.
-
-1. Under the time.sleep(5) and in line with the if statement add the following code
-
-```python
-else:
-	pass
-```
 
 ## Putting it all together Part 2
 
@@ -162,4 +151,6 @@ start()
 1. Add a specific block which triggers the camera
 
 2. Add further blocks to control PiCamera settings such as taking a video or applying a filter 
+
+3. Use blocks to start and stop the PiCamera recording a video
 

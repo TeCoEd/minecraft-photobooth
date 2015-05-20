@@ -6,7 +6,6 @@ import picamera
 ###Code to take a picture###
 def take_the_pic():
     with picamera.PiCamera()as camera:
-        #camera.resolution = (150, 100)
         camera.start_preview()
         time.sleep(2)
         camera.capture('selfie.jpg')
@@ -14,11 +13,8 @@ def take_the_pic():
 ###Code to find the player's location###
 def where_am_I():
     while True:
-        pos = mc.player.getPos()
-        x = pos.x
-        y = pos.y
-        z = pos.z
-    
+        x, y, z = mc.player.getPos()
+           
         time.sleep(3)
         
         if x >= 10.5 and y == 9.0 and z == -44.3:
