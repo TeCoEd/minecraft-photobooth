@@ -117,17 +117,13 @@ time.sleep(5)
 
 ## Putting it all together Part 2
 
-Well done you are nearly there, the final part of the project is to create one more function to begin the program and run the other functions that check where you are.  You will notice now that your original `where_am_I()` function includes all the code to check the players location and trigger the camera.  A new function will call
-these parts of the program
+Well done you are nearly there, the final part of the project is to run the program and call the function to check where you are.  You will notice now that your original `where_am_I()` function includes all the code to check the players location and trigger the camera.  Add a simple chat message to promt the play to find the Photo Booth and yoy are ready.  
 
 1. Add the code below to the bottom of your program
 
 ```python
-def start():
-    mc.postToChat("Find the Photo-Booth")
-    where_am_I()
-    
-start()
+mc.postToChat("Find the Photo-Booth")
+where_am_I()
 ```
 2. Save the program
 
