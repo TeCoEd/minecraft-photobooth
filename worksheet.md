@@ -82,12 +82,12 @@ At this point we have a Photo booth, the co-ordinates of the trigger block, and 
 
 ```python
 while True:
-	where_am_I()
+	where_am_i()
 	time.sleep(2)
 	if x >= 10.5 and y == 9.0 and z == -44.3:
 		print ("You are at the Photo booth!")   
 
-where_am_I()		
+where_am_i()		
 ```
 
 1. Save the program and press F5 to test it.
@@ -113,7 +113,7 @@ take_the_pic()
 mc.postToChat("Check out your picture")
 time.sleep(5)
 ```
-3. Delete the `where_am_I()` line	
+3. Delete the `where_am_i()` line	
 
 ## Putting it all together Part 2
 
@@ -123,7 +123,7 @@ Well done you are nearly there, the final part of the project is to run the prog
 
 ```python
 mc.postToChat("Find the Photo-Booth")
-where_am_I()
+where_am_i()
 ```
 2. Save the program
 
