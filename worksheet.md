@@ -86,6 +86,7 @@ while True:
 	time.sleep(2)
 	if x >= 10.5 and y == 9.0 and z == -44.3:
 		print ("You are at the Photo booth!")   
+
 where_am_I()		
 ```
 
