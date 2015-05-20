@@ -1,17 +1,16 @@
-﻿from mcpi import minecraft​
-​mc = minecraft.Minecraft.create()
-​import time
+from mcpi import minecraft​
+import time
 import picamera
 
-###Code to take a picture###
+mc = minecraft.Minecraft.create()
+
 def take_the_pic():
-    with picamera.PiCamera()as camera:
+    with picamera.PiCamera() as camera:
         camera.start_preview()
         time.sleep(2)
         camera.capture('selfie.jpg')
 
-###Code to find the player's location###
-def where_am_I():
+def where_am_i():
     while True:
         x, y, z = mc.player.getPos()
            
@@ -27,11 +26,8 @@ def where_am_I():
             take_the_pic()
             mc.postToChat("Check out your picture")
             time.sleep(5)
-        else:
-            pass
-
-def start():
-    mc.postToChat("Find the Photo-Booth")
-    where_am_I()
+        
+mc.postToChat("Find the Photo-Booth")
+where_am_I()
     
-start()
+
