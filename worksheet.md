@@ -55,7 +55,7 @@ Now we need to create a Photobooth in the Minecraft environment, this is done ma
 
 Using any block type create a Photobooth, this can be any shape but should have at least one block width of free space inside so that the player can enter.
 
-![](images/Photobooth.png)
+![](images/Photobooth.jpg)
 
 Once you have created your Photobooth move your player inside and onto the trigger block.  This is the block that the player stands on to run the function that 
 you wrote in step 1, it will trigger the PiCamera.  In the Minecraft environment your position is measured in the `x`, `y` and `z` axis, look at the top right of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example `10.5`, `9.0`, `-44.3`.  These are also the `x`, `y`, `z` co-ordinates of the 'trigger' block in your Photobooth.
