@@ -1,6 +1,6 @@
-# Minecraft Photo booth
+# Minecraft Photobooth
 
-Create a Photo booth in Minecraft, which you the player enter the Photo booth it triggers the PiCamera and takes your picture, don't forget to smile.
+Create a Photobooth in Minecraft, which you the player enter the Photobooth it triggers the PiCamera and takes your picture, don't forget to smile.
 
 Before starting ensure that your PiCamera is attached to the Raspberry Pi and enabled in the settings.  This is covered in this tutorial.  Once you have connected the camera boot up the Raspberry Pi
 
@@ -11,7 +11,7 @@ This will import the PiCamera module to control the camera and the time module t
 
 1. Open the LX Terminal
 
-2. Type `sudo IDLE`, this will load the Python IDLE code editor which you will use to write the Photo booth program
+2. Type `sudo IDLE`, this will load the Python IDLE code editor which you will use to write the Photobooth program
 
 3. Open a new window
 
@@ -43,9 +43,9 @@ take_the_pic()
 We have set the camera to show a two second preview so that you can strike your pose and smile before the picture is taken.  The image is stored as a file called
 selfie.jpg
 
-## Building a Photo booth 
+## Building a Photobooth 
 
-Now we need to create a Photo booth in the Minecraft environment, this is done manually and can be built where ever you want to locate it.  To open Minecraft, 
+Now we need to create a Photobooth in the Minecraft environment, this is done manually and can be built where ever you want to locate it.  To open Minecraft, 
 
 1. Click the start button
 
@@ -53,20 +53,20 @@ Now we need to create a Photo booth in the Minecraft environment, this is done m
 
 3. When it opens create a new world.
 
-Using any block type create a Photo booth, this can be any shape but should have at least one block width of free space inside so that the player can enter.
+Using any block type create a Photobooth, this can be any shape but should have at least one block width of free space inside so that the player can enter.
 
 ![](images/Photobooth.png)
 
-Once you have created your Photo booth move your player inside and onto the trigger block.  This is the block that the player stands on to run the function that 
-you wrote in step 1, it will trigger the PiCamera.  In the Minecraft environment your position is measured in the `x`, `y` and `z` axis, look at the top right of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example `10.5`, `9.0`, `-44.3`.  These are also the `x`, `y`, `z` co-ordinates of the 'trigger' block in your Photo booth.
+Once you have created your Photobooth move your player inside and onto the trigger block.  This is the block that the player stands on to run the function that 
+you wrote in step 1, it will trigger the PiCamera.  In the Minecraft environment your position is measured in the `x`, `y` and `z` axis, look at the top right of the window and you will see the `x`, `y`, `z` co-ordinates of your player, for example `10.5`, `9.0`, `-44.3`.  These are also the `x`, `y`, `z` co-ordinates of the 'trigger' block in your Photobooth.
  
-1. Walk into your Photo booth
+1. Walk into your Photobooth
 
 2. Record the `x`, `y`, `z`, co-ordinates of your PiCamera 'trigger' block.
 
 ## Finding where I am?
 
-When you are playing Minecraft your the program will need to check that you are inside the Photo booth, if you are then it will trigger the `take_the_pic` function and take a picture.  To do this Minecraft needs to know where you are in the world, it needs to measure and record your position.   To find your position you use the code, `x, y, x = mc.player.getPos()`.  This measures the `x`, `y`, `z` position of your player.  You can then use `print pos.x` to print the `x` value.  Now you now the position of the player you can test to see if they are in the Photo booth. 
+When you are playing Minecraft your the program will need to check that you are inside the Photobooth, if you are then it will trigger the `take_the_pic` function and take a picture.  To do this Minecraft needs to know where you are in the world, it needs to measure and record your position.   To find your position you use the code, `x, y, x = mc.player.getPos()`.  This measures the `x`, `y`, `z` position of your player.  You can then use `print pos.x` to print the `x` value.  Now you now the position of the player you can test to see if they are in the Photobooth. 
 
 1. Add the function below to your PiCamera program
 
@@ -76,36 +76,36 @@ def where_am_i():
 		x, y, z, = mc.player.getPos()
 ```
 	
-## Testing that you are in the Photo booth 
+## Testing that you are in the Photobooth 
  
-At this point we have a Photo booth, the co-ordinates of the trigger block, and a function to control the PiCamera and take a picture.  The next step is to test the program identifies when you are in the Photo booth.  To do this we must create a loop which checks if your player co-ordinates match the trigger block co-ordinates. If they do, then you are standing in the Photo booth.  To do this we use a simple `if` statement, we call these conditionals.  Add the code below to your program. 
+At this point we have a Photobooth, the co-ordinates of the trigger block, and a function to control the PiCamera and take a picture.  The next step is to test the program identifies when you are in the Photobooth.  To do this we must create a loop which checks if your player co-ordinates match the trigger block co-ordinates. If they do, then you are standing in the Photobooth.  To do this we use a simple `if` statement, we call these conditionals.  Add the code below to your program. 
 
 ```python
 while True:
 	where_am_i()
 	time.sleep(2)
 	if x >= 10.5 and y == 9.0 and z == -44.3:
-		print ("You are at the Photo booth!")   
+		print ("You are at the Photobooth!")   
 
 where_am_i()		
 ```
 
 1. Save the program and press F5 to test it.
 
-2. Walk into your Photo booth
+2. Walk into your Photobooth
 
-You will note that the `if` statement checks if `x` value is greater than or equal to 10.5, this is ensure that it picks up the block as it could have a value of 10.6.  Remember to replace the `x`, `y` and `z` values with the values from your Photo booth.
+You will note that the `if` statement checks if `x` value is greater than or equal to 10.5, this is ensure that it picks up the block as it could have a value of 10.6.  Remember to replace the `x`, `y` and `z` values with the values from your Photobooth.
 
 ## Putting it all together Part 1
 
-Now you have a working Photo booth we need to add the PiCamera to take a picture.   We will replace the console message with a message in Minecraft to tell you that you are in the Photo booth, a quick reminder to smile and then call the PiCamera function, `take_the_pic()`.  Displaying a message is easly achived by using the code `mc.postToChat("You are in the Photo booth!")`    
+Now you have a working Photobooth we need to add the PiCamera to take a picture.   We will replace the console message with a message in Minecraft to tell you that you are in the Photobooth, a quick reminder to smile and then call the PiCamera function, `take_the_pic()`.  Displaying a message is easily achieved by using the code `mc.postToChat("You are in the Photobooth!")`    
  
-1. Comment out the print "You are at the Photo booth!"   
+1. Comment out the print "You are at the Photobooth!"   
 
-2. Under and in-line with the commented out `###You are at the Photo booth`, add the following code
+2. Under and in-line with the commented out `###You are at the Photobooth`, add the following code
 
 ```python
-mc.postToChat("You are in the Photo booth!")
+mc.postToChat("You are in the Photobooth!")
 time.sleep(1)
 mc.postToChat("Smile!")
 time.sleep(1)
@@ -117,7 +117,7 @@ time.sleep(5)
 
 ## Putting it all together Part 2
 
-Well done you are nearly there, the final part of the project is to run the program and call the function to check where you are.  You will notice now that your original `where_am_I()` function includes all the code to check the players location and trigger the camera.  Add a simple chat message to promt the play to find the Photo Booth and yoy are ready.  
+Well done you are nearly there, the final part of the project is to run the program and call the function to check where you are.  You will notice now that your original `where_am_I()` function includes all the code to check the players location and trigger the camera.  Add a simple chat message to prompt the player to find the Photobooth and you are ready.  
 
 1. Add the code below to the bottom of your program
 
@@ -127,7 +127,7 @@ where_am_i()
 ```
 2. Save the program
 
-3. Press F5 to run and test the Photo booth
+3. Press F5 to run and test the Photobooth
 
 ## What next
 
